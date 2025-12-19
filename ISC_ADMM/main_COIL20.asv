@@ -1,0 +1,50 @@
+
+clear;
+
+load COIL20_norm.mat
+% Z = fea';
+% true_labels = gnd;
+% dataName = "COIL20" ;
+% [d,n] = size(Z);
+% numClust = length(unique(true_labels));
+% init_method_collects= ["trig_normalize"];
+% init_method = init_method_collects(1);
+% Z = norm_data(Z,init_method);
+Z = X; true_labels = Y;
+numClust = length(unique(true_labels));
+[d,n] = size(Z);
+S = constructW_PKN(Z,5,1);
+[~,label_pred] = SpectralClustering_ncut(S,numClust);
+F = full(ind2vec(label_pred'))';
+
+options = [];
+options.lambda = 1e+7;
+options.beta = 1e-2;
+options.updateY=1;
+options.gamma =100;
+options.grad = 1;
+options.alpha = 100;
+options.affine = true;
+options.outlier = false;
+options.rho = 0.8;
+options.SC_type = 0;
+options.maxIter = 10;
+options.thr1 = 1e-3;
+options.repeat = 1;
+repeat = options.repeat;
+
+
+W = ones(d,n)/1; 
+
+tic; [e_SC,CMat,label_pred,W] = SSC2(Z,F,W,numClust,options); time = toc;
+[~,label_pred] = max(label_pred,[],2);
+[acc_W,nmi_W,purity_W,ari_W]=ClusteringMeasure(label_pred,true_labels);
+
+fprintf('ISC: accuracy = %.4f, time = %f\n', acc_W, time);
+
+
+      
+
+
+
+

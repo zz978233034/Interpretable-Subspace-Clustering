@@ -1,0 +1,30 @@
+%--------------------------------------------------------------------------
+% X D*N is dataset
+% F N*C 
+% r = projection dimension, if r = 0, then no projection
+% affine = use the affine constraint if true
+% s = clustering ground-truth
+% missrate = clustering error
+% CMat = coefficient matrix obtained by SSC
+%--------------------------------------------------------------------------
+% Copyright @ Ehsan Elhamifar, 2012
+%--------------------------------------------------------------------------
+
+function [est_labels,CMat,F,W] = SSC2(X,F,W,numClust,options)
+
+
+rho = options.rho;
+SC_type = options.SC_type;
+
+[CMat,F,W] = ISC(X,F,W,options);
+C = CMat;
+
+
+CKSym = BuildAdjacency(thrC(C,rho));
+
+if SC_type == 0
+    est_labels = SpectralClustering(CKSym,numClust);
+else
+    est_labels = SpectralClustering_OMP(CKSym, numClust, 'Eig_Solver', 'eigs');
+end
+

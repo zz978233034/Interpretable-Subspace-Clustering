@@ -1,6 +1,6 @@
 # Interpretable Subspace Clustering
 
-## An official implementation of the TPAMI 2025 accepted paper: [[Interpretable Subspace Clustering](URL "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11353063")](https://doctor-nobody.github.io/papers/tpami2026.pdf)
+## An official implementation of the TPAMI 2025 accepted paper: [Interpretable Subspace Clustering](URL "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11353063")]
 
 ## How to run:
 - You can directly run main_LUNG.m

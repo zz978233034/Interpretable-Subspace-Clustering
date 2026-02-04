@@ -18,4 +18,3 @@
   keywords={Clustering methods;Feature extraction;Sparse matrices;Vectors;Decision trees;Clustering algorithms;Linear programming;Iterative methods;High dimensional data;Prototypes;Machine learning;interpretability;subspace clustering},
   doi={10.1109/TPAMI.2026.3653776}}
 
-"""

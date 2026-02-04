@@ -7,7 +7,7 @@
 
 ### Citation: Please cite our paper if you use this code:
 
-`
+```
 @ARTICLE{11353063,
   author={Zhang, Zheng and Zhou, Peng and Yao, Aiting and Du, Liang and Liu, Xinwang},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
@@ -17,4 +17,4 @@
   number={},
   pages={1-15},
   keywords={Clustering methods;Feature extraction;Sparse matrices;Vectors;Decision trees;Clustering algorithms;Linear programming;Iterative methods;High dimensional data;Prototypes;Machine learning;interpretability;subspace clustering},
-  doi={10.1109/TPAMI.2026.3653776}}`
+  doi={10.1109/TPAMI.2026.3653776}}```

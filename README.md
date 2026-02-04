@@ -1,6 +1,6 @@
 # Interpretable Subspace Clustering
 
-## An official implementation of the TPAMI 2026 accepted paper: [Interpretable Subspace Clustering](URL "https://ieeexplore.ieee.org/document/11353063")
+## An official implementation of the TPAMI 2026 accepted paper: [Interpretable Subspace Clustering]("https://ieeexplore.ieee.org/document/11353063")
 
 ## How to run:
 - You can directly run main_LUNG.m
